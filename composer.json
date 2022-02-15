@@ -1,0 +1,24 @@
+{
+    "name": "develo/module-cloudinaryimageproductoption",
+    "description": "Adds new product option that uses Cloudinary to upload image.",
+    "version" : "1.0.0",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Develo Design Llt",
+            "email": "luke@develodesign.co.uk",
+            "homepage": "https://www.develodesign.co.uk"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Develo\\CloudinaryImageProductOption\\": ""
+        }
+    }
+}

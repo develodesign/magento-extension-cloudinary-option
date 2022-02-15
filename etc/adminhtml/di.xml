@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magento\CatalogStaging\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="new-modifier-all" xsi:type="array">
+                    <item name="class" xsi:type="string">Develo\CloudinaryImageProductOption\Ui\DataProvider\Product\Form\Modifier\All</item>
+                    <item name="sortOrder" xsi:type="number">71</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="new-modifier-all" xsi:type="array">
+                    <item name="class" xsi:type="string">Develo\CloudinaryImageProductOption\Ui\DataProvider\Product\Form\Modifier\All</item>
+                    <item name="sortOrder" xsi:type="number">71</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Develo\CloudinaryImageProductOption\Ui\DataProvider\Product\Form\Modifier\Pool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Develo\CloudinaryImageProductOption\Ui\DataProvider\Product\Form\Modifier\All">
+        <arguments>
+            <argument name="pool" xsi:type="object">Develo\CloudinaryImageProductOption\Ui\DataProvider\Product\Form\Modifier\Pool</argument>
+        </arguments>
+    </type>
+    <virtualType name="Develo\CloudinaryImageProductOption\Ui\DataProvider\Product\Form\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="new-custom-option" xsi:type="array">
+                    <item name="class" xsi:type="string">Develo\CloudinaryImageProductOption\Ui\DataProvider\Product\Form\Modifier\CustomOptions</item>
+                    <item name="sortOrder" xsi:type="number">72</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option">
+        <plugin name="Develo_CloudinaryImageProductOption_Plugin_Magento_Catalog_Model_ResourceModel_Product_Option" type="Develo\CloudinaryImageProductOption\Plugin\Catalog\Model\ResourceModel\Product\Option" sortOrder="10" disabled="false"/>
+    </type>
+
+</config>

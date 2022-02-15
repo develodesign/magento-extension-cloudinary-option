@@ -1,0 +1,70 @@
+<?php /* @var $block CloudinaryImage */
+
+use Develo\CloudinaryImageProductOption\Block\Product\View\Options\Type\CloudinaryImage; ?>
+<?php
+$_option = $block->getOption();
+$class = ($_option->getIsRequire()) ? ' required' : '';
+
+?>
+
+<div class="field <?= /* @noEscape */
+$class ?>">
+
+    <label class="label" for="options_<?= $block->escapeHtmlAttr($_option->getId()) ?>_cloudinaryimage">
+        <span><?= $block->escapeHtml($_option->getTitle()) ?></span>
+        <?= /* @noEscape */
+        $block->getFormattedPrice() ?>
+    </label>
+
+    <div class="control">
+        <?php $_textValidate = null;
+        if ($_option->getIsRequire())
+        {
+            $_textValidate['required'] = true;
+        }
+        $_textValidate['validate-no-utf8mb4-characters'] = true;
+        ?>
+        <input type="text"
+               id="options_<?= $block->escapeHtmlAttr($_option->getId()) ?>_cloudinaryimage"
+               class="input-text product-custom-option"
+            <?php if ( ! empty($_textValidate)) { ?>
+                data-validate="<?= $block->escapeHtml(json_encode($_textValidate)) ?>"
+            <?php } ?>
+               name="options[<?= $block->escapeHtmlAttr($_option->getId()) ?>]"
+               data-selector="options[<?= $block->escapeHtmlAttr($_option->getId()) ?>]"
+               value="<?= $block->escapeHtml($block->getDefaultValue()) ?>"
+               hidden/>
+
+        <div class="cloudinaryimage-upload-thumbnail"
+             id="cloudinaryimage_<?= $block->escapeHtmlAttr($_option->getId()) ?>_uploaded_thumbnail"></div>
+        <div class="cloudinaryimage-button-wrapper">
+            <a id="cloudinaryimage_button_<?= $block->escapeHtmlAttr($_option->getId()) ?>" class="cloudinary-button">Upload
+                file</a>
+        </div>
+    </div>
+</div>
+
+<?php if ($block->getCloudinaryScriptAdded() !== '1') : ?>
+
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <?php $block->setCloudinaryScriptAdded() ?>
+
+<?php endif; ?>
+
+<script type="text/javascript">
+
+    var cloudinaryWidget<?= $block->escapeHtmlAttr($_option->getId()) ?> = cloudinary.createUploadWidget(<?= $block->getCloudinarySettings(); ?>, (error, result) => {
+            if (!error && result && result.event === "success") {
+                document.getElementById("options_<?= $block->escapeHtmlAttr($_option->getId()) ?>_cloudinaryimage").value = JSON.stringify(result.info);
+                document.getElementById("cloudinaryimage_<?= $block->escapeHtmlAttr($_option->getId()) ?>_uploaded_thumbnail").innerHTML = '<img alt="' + result.info.asset_id + '" src="' + result.info.thumbnail_url + '">';
+                console.log('Done! Here is the image info: ', result.info);
+            }
+        }
+    )
+
+    document.getElementById("cloudinaryimage_button_<?= $block->escapeHtmlAttr($_option->getId()) ?>").addEventListener("click", function () {
+        cloudinaryWidget<?= $block->escapeHtmlAttr($_option->getId()) ?>.open();
+    }, false);
+
+</script>
+

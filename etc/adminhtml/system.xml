@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="develo" translate="label" sortOrder="999">
+			<label>Develo</label>
+		</tab>
+		<section id="cloudinary_image" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Cloudinary Image</label>
+			<tab>develo</tab>
+			<resource>Develo_CloudinaryImageProductOption::config_develo_cloudinaryimageproductoption</resource>
+			<group id="backend_configuration" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Backend Configuration</label>
+				<field id="cloud_name" type="text" sortOrder="10" showInWebsite="0" showInStore="1" showInDefault="1" translate="label">
+					<label>Cloud Name</label>
+					<comment>Can be found in your Cloudinary Dashboard</comment>
+				</field>
+				<field id="api_key" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Api Key</label>
+					<comment>Can be found in your Cloudinary Dashboard</comment>
+				</field>
+				<field id="upload_preset" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Upload Preset</label>
+					<comment>Cloudinary Dashboard &gt; Settings &gt; Upload &gt; Upload presets</comment>
+				</field>
+			</group>
+			<group id="frontend_configuration" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Frontend Configuration</label>
+				<field id="show_advanced_options" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Show Advanced Options</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="cropping" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Allow Cropping</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="styles" type="textarea" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Styles</label>
+					<comment>JSON template of the styles see https://demo.cloudinary.com/uw/#/ for example</comment>
+				</field>
+                <field id="sources" type="multiselect" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>Sources</label>
+                    <comment>Hold 'ctrl' to select multiple sources</comment>
+                    <source_model>Develo\CloudinaryImageProductOption\Model\Config\Source\Sources</source_model>
+                </field>
+			</group>
+            <group id="sources_api_keys" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                <label>Sources API Keys</label>
+                <field id="dropbox_app_key" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>dropboxAppKey</label>
+                    <comment>Your DropBox App key. Required if adding the dropbox source.</comment>
+                </field>
+                <field id="facebook_app_id" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>facebookAppId</label>
+                    <comment>The App ID of your own Facebook application. Defaults to using the Cloudinary Media Upload app to access their Facebook accounts if not provided.</comment>
+                </field>
+                <field id="google_api_key" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>googleApiKey</label>
+                    <comment>Your API key needed to access Google APIs. Required if adding the image_search source.</comment>
+                </field>
+                <field id="instagram_client_id" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>instagramClientId</label>
+                    <comment>The App ID of your own Instagram application for accessing your users Instagram accounts. Defaults to using the Cloudinary Media Upload app to access their Instagram accounts if not provided.</comment>
+                </field>
+                <field id="google_drive_client_id" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+                    <label>googleDriveClientId</label>
+                    <comment>The Client ID of your own Google Drive application for accessing your users Google Drive accounts. Defaults to using the Cloudinary Google Drive app to access their accounts if not provided.</comment>
+                </field>
+            </group>
+		</section>
+	</system>
+</config>

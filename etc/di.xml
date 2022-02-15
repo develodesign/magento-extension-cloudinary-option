@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Model\Product\Option">
+        <arguments>
+            <argument name="optionGroups" xsi:type="array">
+                <item name="Develo" xsi:type="string">Develo\CloudinaryImageProductOption\Model\Product\Option\Type\CloudinaryImage</item>
+            </argument>
+            <argument name="optionTypesToGroups" xsi:type="array">
+                <item name="cloudinaryimage" xsi:type="const">Develo\CloudinaryImageProductOption\Api\Data\ProductCustomOptionInterface::OPTION_GROUP_DEVELO</item>
+            </argument>
+        </arguments>
+        <plugin name="Develo_CloudinaryImageProductOption_Plugin_Catalog_Model_Product_OptionPlugin" type="Develo\CloudinaryImageProductOption\Plugin\Catalog\Model\Product\OptionPlugin" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Composite">
+        <arguments>
+            <argument name="customizableOptionValues" xsi:type="array">
+                <item name="cloudinaryimage" xsi:type="string">Develo\CloudinaryImageProductOption\Model\CartItem\DataProvider\CustomizableOptionValue\CloudinaryImage</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\QuoteGraphQl\Model\CartItem\DataProvider\CustomizableOptionValue\Composite">
+        <arguments>
+            <argument name="customizableOptionValues" xsi:type="array">
+                <item name="cloudinaryimage" xsi:type="string">Develo\CloudinaryImageProductOption\Model\CartItem\DataProvider\CustomizableOptionValue\CloudinaryImage</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\ResourceModel\Product\Option">
+        <plugin name="Develo_CloudinaryImageProductOption_Plugin_Magento_Catalog_Model_ResourceModel_Product_Option" type="Develo\CloudinaryImageProductOption\Plugin\Catalog\Model\ResourceModel\Product\Option" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Catalog\Block\Adminhtml\Product\Composite\Fieldset\Options">
+        <plugin name="Develo_CloudinaryImageProductOption_Plugin_Catalog_Block_Adminhtml_Product_Composite_Fieldset_Options" type="Develo\CloudinaryImageProductOption\Plugin\Catalog\Block\Adminhtml\Product\Composite\Fieldset\Options" sortOrder="10" disabled="false"/>
+    </type>
+    <preference for="Magento\Catalog\Helper\Product\Configuration" type="Develo\CloudinaryImageProductOption\Rewrite\Magento\Catalog\Helper\Product\Configuration"/>
+
+    <type name="Magento\Sales\Model\Order\Pdf\Items\AbstractItems">
+        <plugin name="Develo_CloudinaryImageProductOption_Plugin_Sales_Model_Order_Pdf_Items_AbstractItems" type="Develo\CloudinaryImageProductOption\Plugin\Sales\Model\Order\Pdf\Items\AbstractItems" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Sales\Model\Order\Item">
+        <plugin name="Develo_CloudinaryImageProductOption_Plugin_Sales_Model_Order_Item" type="Develo\CloudinaryImageProductOption\Plugin\Sales\Model\Order\Item" sortOrder="10" disabled="false"/>
+    </type>
+</config>

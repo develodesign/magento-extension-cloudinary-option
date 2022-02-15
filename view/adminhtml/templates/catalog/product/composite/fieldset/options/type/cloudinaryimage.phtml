@@ -1,0 +1,61 @@
+<?php /* @var $block CloudinaryImage */
+
+use Develo\CloudinaryImageProductOption\Block\Product\View\Options\Type\CloudinaryImage; ?>
+<?php
+$_option = $block->getOption();
+$class = ($_option->getIsRequire()) ? ' required' : '';
+?>
+
+<div class="field admin__field<?= $_option->getIsRequire() ? ' required _required' : '' ?>">
+
+    <label class="admin__field-label label">
+        <?= $block->escapeHtml($_option->getTitle()) ?>
+        <?= /* @noEscape */
+        $block->getFormattedPrice() ?>
+    </label>
+
+    <div class="control admin__field-control">
+        <?php $_textValidate = null;
+        if ($_option->getIsRequire())
+        {
+            $_textValidate['required'] = true;
+        }
+        $_textValidate['validate-no-utf8mb4-characters'] = true;
+        ?>
+        <input type="text"
+               id="options_<?= $block->escapeHtmlAttr($_option->getId()) ?>_cloudinaryimage"
+               class="input-text product-custom-option"
+            <?php if ( ! empty($_textValidate)) { ?>
+                data-validate="<?= $block->escapeHtml(json_encode($_textValidate)) ?>"
+            <?php } ?>
+               name="options[<?= $block->escapeHtmlAttr($_option->getId()) ?>]"
+               data-selector="options[<?= $block->escapeHtmlAttr($_option->getId()) ?>]"
+               value="<?= $block->escapeHtml($block->getDefaultValue()) ?>"
+               hidden/>
+
+        <div class="cloudinaryimage-upload-thumbnail"
+             id="cloudinaryimage_<?= $block->escapeHtmlAttr($_option->getId()) ?>_uploaded_thumbnail"></div>
+        <div class="cloudinaryimage-button-wrapper">
+            <a id="cloudinaryimage_button_<?= $block->escapeHtmlAttr($_option->getId()) ?>" class="cloudinary-button">Upload
+                file</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var cloudinaryWidget<?= $block->escapeHtmlAttr($_option->getId()) ?> = cloudinary.createUploadWidget(<?= $block->getCloudinarySettings(); ?>, (error, result) => {
+            if (!error && result && result.event === "success") {
+                document.getElementById("options_<?= $block->escapeHtmlAttr($_option->getId()) ?>_cloudinaryimage").value = JSON.stringify(result.info);
+                document.getElementById("cloudinaryimage_<?= $block->escapeHtmlAttr($_option->getId()) ?>_uploaded_thumbnail").innerHTML = '<img alt="' + result.info.asset_id + '" src="' + result.info.thumbnail_url + '">';
+                console.log('Done! Here is the image info: ', result.info);
+            }
+        }
+    )
+
+    document.getElementById("cloudinaryimage_button_<?= $block->escapeHtmlAttr($_option->getId()) ?>").addEventListener("click", function () {
+        cloudinaryWidget<?= $block->escapeHtmlAttr($_option->getId()) ?>.open();
+    }, false);
+
+</script>
+

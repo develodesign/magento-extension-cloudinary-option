@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <referenceBlock class="Magento\Catalog\Block\Adminhtml\Product\Composite\Fieldset\Options"
+                    name="product.composite.fieldset.options"
+                    template="Magento_Catalog::catalog/product/composite/fieldset/options.phtml">
+        <block class="Develo\CloudinaryImageProductOption\Block\Product\View\Options\Type\CloudinaryImage"
+               name="product.composite.fieldset.options.cloudinaryimage" as="cloudinaryimage"
+               template="Develo_CloudinaryImageProductOption::catalog/product/composite/fieldset/options/type/cloudinaryimage.phtml"/>
+    </referenceBlock>
+</layout>

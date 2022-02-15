@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<cloudinary_image>
+			<backend_configuration>
+				<cloud_name/>
+				<api_key/>
+				<upload_preset/>
+			</backend_configuration>
+			<frontend_configuration>
+				<show_advanced_options/>
+				<cropping/>
+                <styles>{
+                    "palette": {
+                    "window": "#fff",
+                    "sourceBg": "#f4f4f5",
+                    "windowBorder": "#90a0b3",
+                    "tabIcon": "#000000",
+                    "inactiveTabIcon": "#555a5f",
+                    "menuIcons": "#555a5f",
+                    "link": "#0433ff",
+                    "action": "#339933",
+                    "inProgress": "#0433ff",
+                    "complete": "#339933",
+                    "error": "#cc0000",
+                    "textDark": "#000000",
+                    "textLight": "#fcfffd"
+                    },
+                    "fonts": {
+                    "default": null,
+                    "sans-serif": {
+                    "url": null,
+                    "active": true
+                    }
+                    }
+                }</styles>
+                <sources/>
+			</frontend_configuration>
+            <sources_api_keys>
+                <dropbox_app_key/>
+                <facebook_app_id/>
+                <google_api_key/>
+                <instagram_client_id/>
+                <google_drive_client_id/>
+            </sources_api_keys>
+		</cloudinary_image>
+	</default>
+</config>
