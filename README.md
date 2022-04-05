@@ -5,8 +5,7 @@
 - [Main Functionalities](#markdown-header-main-functionalities)
 - [Installation](#markdown-header-installation)
 - [Configuration](#markdown-header-configuration)
-- [Specifications](#markdown-header-specifications)
-- [Attributes](#markdown-header-attributes)
+- [Links](#markdown-header-links)
 
 ## Main Functionalities
 
@@ -68,9 +67,17 @@ There are three variables necessary for the configuration. To get your cloudName
 - instagramClientId - The App ID of your own Instagram application for accessing your users Instagram accounts. Defaults to using the Cloudinary Media Upload app to access their Instagram accounts if not provided.
 - instagramClientId - The Client ID of your own Google Drive application for accessing your users Google Drive accounts. Defaults to using the Cloudinary Google Drive app to access their accounts if not provided.
 
-## Specifications
+## Links
 
-## Attributes
+- [Magento Marketplace Listing](https://marketplace.magento.com/develodesign-module-cloudinaryimageproductoption.html).
+
+- Demo Video
+[![Magento Cloudinary Product option](https://img.youtube.com/vi/zU9KM5e8rxY/0.jpg)](https://youtu.be/zU9KM5e8rxY)
+
+
+[Developed by Develo](https://www.develodesign.co.uk).
+
+
 
 
 
