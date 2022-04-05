@@ -1,4 +1,4 @@
-# Mage2 Module Develo CloudinaryImageProductOption
+# Magento 2 Module : Cloudinary Image Product Option
 
     ``develo/module-cloudinaryimageproductoption``
 
