@@ -1,5 +1,5 @@
 {
-    "name": "develo/module-cloudinaryimageproductoption",
+    "name": "develodesign/module-cloudinaryimageproductoption",
     "description": "Adds new product option that uses Cloudinary to upload image.",
     "version" : "1.0.0",
     "type": "magento2-module",
