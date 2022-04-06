@@ -1,6 +1,6 @@
 # Magento 2 Module : Cloudinary Image Product Option
 
-    ``develo/module-cloudinaryimageproductoption``
+    ``develodesign/module-cloudinaryimageproductoption``
     
 ## Demo Video
  
@@ -25,7 +25,7 @@ Adds new product option that uses Cloudinary to upload image.
 * Place an order for the module through Develo Design Magento Marketplace.
 * Open a terminal and run the following command in your Magento directory
 ```
-composer require develo/module-cloudinaryimageproductoption
+composer require develodesign/module-cloudinaryimageproductoption
 ```
 * Set up the module by running the following commands
 ```
@@ -44,7 +44,7 @@ php bin/magento setup:static-content:deploy
 To uninstall the module run the following commands in terminal in your Magento directory
 ```
 php bin/magento module:disable Develo_CloudinaryImageProductOption
-composer remove develo/module-cloudinaryimageproductoption
+composer remove develodesign/module-cloudinaryimageproductoption
 rm -rf app/code/Develo/CloudinaryImageProductOption
 php bin/magento setup:upgrade
 php bin/magento setup:di:compile
