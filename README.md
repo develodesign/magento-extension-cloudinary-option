@@ -1,6 +1,4 @@
 # Magento 2 Module : Cloudinary Image Product Option
-
-    ``develodesign/module-cloudinaryimageproductoption``
     
 ## Demo Video
  
@@ -12,17 +10,17 @@
 - [Configuration](#markdown-header-configuration)
 - [Links](#markdown-header-links)
 
+
 ## Main Functionalities
 
-Adds new product option that uses Cloudinary to upload image.
+This module adds a new product option for Cloudinary image uploads, site visitors can upload images to Cloudinary storage, or select images from a range of Social networks.
 
-## Installation
 
-- in production please use the `--keep-generated` option
+## Installation via Composer
 
-### Composer
+    composer require develodesign/module-cloudinaryimageproductoption
+    
 
-* Place an order for the module through Develo Design Magento Marketplace.
 * Open a terminal and run the following command in your Magento directory
 ```
 composer require develodesign/module-cloudinaryimageproductoption
