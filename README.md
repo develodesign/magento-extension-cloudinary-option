@@ -21,10 +21,6 @@ This module adds a new product option for Cloudinary image uploads, site visitor
     composer require develodesign/module-cloudinaryimageproductoption
     
 
-* Open a terminal and run the following command in your Magento directory
-```
-composer require develodesign/module-cloudinaryimageproductoption
-```
 * Set up the module by running the following commands
 ```
 php bin/magento module:enable Develo_CloudinaryImageProductOption
