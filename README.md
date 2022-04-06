@@ -1,6 +1,11 @@
 # Magento 2 Module : Cloudinary Image Product Option
 
     ``develo/module-cloudinaryimageproductoption``
+    
+## Demo Video
+ 
+[![Magento Cloudinary Product option](https://img.youtube.com/vi/zU9KM5e8rxY/0.jpg)](https://youtu.be/zU9KM5e8rxY)
+
 
 - [Main Functionalities](#markdown-header-main-functionalities)
 - [Installation](#markdown-header-installation)
@@ -70,9 +75,6 @@ There are three variables necessary for the configuration. To get your cloudName
 ## Links
 
 - [Magento Marketplace Listing](https://marketplace.magento.com/develodesign-module-cloudinaryimageproductoption.html).
-
-- Demo Video
-[![Magento Cloudinary Product option](https://img.youtube.com/vi/zU9KM5e8rxY/0.jpg)](https://youtu.be/zU9KM5e8rxY)
 
 
 [Developed by Develo](https://www.develodesign.co.uk).
